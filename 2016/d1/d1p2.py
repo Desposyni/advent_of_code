@@ -9,10 +9,6 @@ instructions = [(i, int(j)) for i, j in instructions]
 
 print(instructions)
 
-# headings are multipliers for effecting direction
-# headings = {'N': 1, 'W': 1, 'S': -1, 'E': -1}
-# directions are multipliers for effecting direction
-# directions = {'L': -1, 'R': 1}
 # heading tracks the current direction we're looking
 heading = 'N'
 # places tracks the places we've visited in (x, y) format
