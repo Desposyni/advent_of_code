@@ -2,34 +2,21 @@ from collections import namedtuple
 
 target = 361527
 
-target = 12
-
 Mem_Loc = namedtuple('Mem_Loc', ['x', 'y', 'v'])
 
 memory = [Mem_Loc(0, 0, 1)]
-for i in range(1, target + 1):
+print(memory[-1].x, memory[-1].y)
 
+for i in range(1, target):
+    d = 1 if i % 2 else -1
+    for x in range(i):
+        if memory[-1].v == target: break
+        memory.append(Mem_Loc(memory[-1].x + d, memory[-1].y, memory[-1].v + 1))
+        print(memory[-1].x, memory[-1].y)
+    for y in range(i):
+        if memory[-1].v == target: break
+        memory.append(Mem_Loc(memory[-1].x, memory[-1].y + d, memory[-1].v + 1))
+        print(memory[-1].x, memory[-1].y)
 
-'''
- 0, 0
- 1, 0  
- 1, 1
- 0, 1 -1, 1
--1, 0 -1,-1
- 0,-1  1,-1  2,-1
- 2, 0  2, 1  2, 2
- 1, 2  0, 2 -1, 2 -2, 2
- 
-
-while v < target
-    x + i
-        v += i
-    y + i
-        v += i
-    i++
-    x-i
-        v += i
-    y-i
-        v += i
-    i++
-'''
+distance = abs(memory[-1].x) + abs(memory[-1].y)
+print(distance, 'steps away')
