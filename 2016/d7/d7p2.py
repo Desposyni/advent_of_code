@@ -8,7 +8,7 @@ ssl_addresses = []
 for address in addresses:
     abas = findall(r'(?=(\w)(?!\1)(\w)\1(?!\w*?]))', address)
     for a, b in abas:
-        bab = findall(rf'{b}{a}{b}(?=\w*?])', address)
+        bab = findall(rf'{b+a+b}(?=\w*?])', address)
         if bab:
             ssl_addresses.append(address)
             break
