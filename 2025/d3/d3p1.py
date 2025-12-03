@@ -7,8 +7,10 @@ for bank in banks:
     left, right, left_middle, middle_right = 0, 0, 0, 0
     middle = max(bank)
     i = bank.index(middle)
-    if i: left = max(bank[:i])
-    if bank[i+1:]: right = max(bank[i+1:])
+    if i:
+        left = max(bank[:i])
+    if bank[i+1:]:
+        right = max(bank[i+1:])
     if left:
         left_middle = left * 10 + middle
     if right:
