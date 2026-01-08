@@ -3,12 +3,15 @@ with open('d4p1.in') as f:
 
 valid_passports = 0
 passports = []
+
 for scan in scans:
     passports.append({})
     for i in scan:
         k, v = i.split(':')
         passports[-1][k] = v
+
 required = ('byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid')
+
 for passport in passports:
     print(passport)
     for requirement in required:
