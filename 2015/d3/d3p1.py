@@ -1,7 +1,6 @@
-#input content
-from itertools import count
+with open("d3p1.in") as f:
+    directions = f.readline()
 
-directions = open("d3p1.in").readline()
 print(directions)
 houses = set()
 x, y = 0, 0
